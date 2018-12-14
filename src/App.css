@@ -7,6 +7,7 @@
   height: 40vmin;
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,6 +21,110 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/*** form ***/
+
+.form-row + .form-row {
+  margin-top: 15px;
+}
+
+.app-image.editable form {
+  position: absolute;
+  border-radius: 5px;
+  background-color: #eee;
+  z-index: 4;
+  width: 104%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px 15px;
+}
+
+.app-image.editable label[for="update_image"] {
+  border-radius: 3px;
+  border: 1px solid #f50057;
+  width: 90% !important;
+  height: 150px !important;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/*** image ***/
+
+.image-creator {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+}
+
+.app-image {
+  position: relative;
+  transition: all .35s ease;
+}
+
+.app-image.selected {
+  background-color: #eee;
+}
+
+.app-image.selected .app-image-footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0 0 4px 4px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+}
+
+.app-image:active,
+.app-image:hover {
+  box-shadow:
+  0px 1px 5px 0px rgba(0, 0, 0, 0.4), 
+  0px 2px 2px 0px rgba(0, 0, 0, 0.28), 
+  0px 3px 1px -2px rgba(0, 0, 0, 0.24)
+}
+
+/*** tooltip ***/
+
+.tooltip {
+  position: absolute;
+  background-color: gold;
+  padding: 5px;
+}
+
+.tooltip.top {
+  top: 0;
+}
+
+.tooltip.right {
+  right: 0;
+}
+
+.tooltip.bottom {
+  bottom: 0;
+}
+
+.tooltip.left {
+  left: 0;
+}
+
+
+.tooltip.top,
+.tooltip.bottom {
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.tooltip.right,
+.tooltip.left {
+  top: 50%;
+  transform: translate(0, -50%)
+}
+
+.image form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
