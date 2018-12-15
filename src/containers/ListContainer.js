@@ -11,7 +11,7 @@ import Message from '../components/Message/Message';
 class ListContainer extends Component {
 
     render() {
-        const { list, selectedImageId } = this.props;
+        const { list, selectedImageId, isAppSave  } = this.props;
         const listLength = Object.keys(list).length;
 
         return (
@@ -22,6 +22,7 @@ class ListContainer extends Component {
                 <List 
                     list={list}
                     selectedImageId={selectedImageId}
+                    isAppSave={isAppSave}
                     onEdit={this.props.onEdit}
                     onDelete={this.props.onDelete} 
                     onSelect={this.props.onSelect}
@@ -36,8 +37,9 @@ class ListContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-      list: state.list,
-      selectedImageId: state.selectedImageId
+        isAppSave: state.isAppSave,
+        list: state.list,
+        selectedImageId: state.selectedImageId
     }
 }
 

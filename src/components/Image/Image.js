@@ -10,6 +10,7 @@ import ImageFooter from './ImageParts/ImageFooter'
 const Image = ({
     image,
     selectedImageId,
+    isAppSave,
     onEdit,
     onSelect,
     onDelete
@@ -44,7 +45,7 @@ const Image = ({
                     />
                 }
                 {
-                    isImageSelected && !isImageEditable
+                    isImageSelected && !isImageEditable && !isAppSave
                     ?
                     <ImageFooter 
                         isEditable={isImageEditable}

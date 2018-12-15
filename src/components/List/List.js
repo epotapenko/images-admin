@@ -6,6 +6,7 @@ import Image from '../Image/Image';
 const List = ({
     list,
     selectedImageId,
+    isAppSave,
     onEdit,
     onDelete,
     onSelect
@@ -17,6 +18,7 @@ const List = ({
                     key={item.id}
                     image={item}
                     selectedImageId={selectedImageId}
+                    isAppSave={isAppSave}
                     onEdit={onEdit}
                     onDelete={onDelete}
                     onSelect={onSelect}

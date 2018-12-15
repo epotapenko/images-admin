@@ -11,28 +11,35 @@ class AppContainer extends Component {
     }
 
     render() {
+        const { isAppSave, list } = this.props;
         return (
             <Grid container justify="center" className="App">
 
                 {this.props.children}
-                
-                <Grid container justify="center">
-                    <Button 
-                        onClick={this.handleSaveApp}
-                        variant="contained" 
-                        color="primary" 
-                        component="button"
-                    >
-                        Save Changes
-                    </Button>
-                </Grid>
+
+                { list.length > 0 && !isAppSave
+                    ?
+                    <Grid container justify="center">
+                        <Button 
+                            onClick={this.handleSaveApp}
+                            variant="contained" 
+                            color="primary" 
+                            component="button"
+                        >
+                            Save Changes
+                        </Button>
+                    </Grid>
+                    :
+                    null
+                }
             </Grid>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    isAppSave: state.isAppSave
+    isAppSave: state.isAppSave,
+    list: state.list
 });
 
 const mapDispatchToProps = dispatch => {
